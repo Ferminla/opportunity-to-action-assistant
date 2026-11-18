@@ -1,0 +1,25 @@
+
+# Secrets and environment variables
+.env
+.env.*
+!.env.example
+
+# Personal workflow configuration
+workflow.local.json
+workflow.configured.json
+*.local.json
+*.configured.json
+
+# Execution data and backups
+executions/
+backups/
+.n8n/
+
+# Python and Node.js
+__pycache__/
+*.pyc
+node_modules/
+
+# Operating system files
+.DS_Store
+Thumbs.db
