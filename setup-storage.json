@@ -1,0 +1,127 @@
+{
+  "name": "OTA - Create storage (run once)",
+  "pinData": {},
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false,
+    "timezone": "Africa/Lagos",
+    "saveManualExecutions": true
+  },
+  "tags": [],
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "853946c8-c1ce-4fee-ac6d-f3293876095d",
+      "name": "Setup Storage - run once",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -2656,
+        -1264
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "table",
+        "operation": "create",
+        "tableName": "ota_opportunities",
+        "columns": {
+          "column": [
+            {
+              "name": "opportunity_id"
+            },
+            {
+              "name": "owner_id"
+            },
+            {
+              "name": "dedupe_key"
+            },
+            {
+              "name": "source_url"
+            },
+            {
+              "name": "title"
+            },
+            {
+              "name": "category"
+            },
+            {
+              "name": "summary"
+            },
+            {
+              "name": "deadline_date"
+            },
+            {
+              "name": "deadline_raw"
+            },
+            {
+              "name": "deadline_time"
+            },
+            {
+              "name": "deadline_timezone"
+            },
+            {
+              "name": "deadline_source_id"
+            },
+            {
+              "name": "deadline_quote"
+            },
+            {
+              "name": "submission_url"
+            },
+            {
+              "name": "submission_instructions"
+            },
+            {
+              "name": "tasks_json"
+            },
+            {
+              "name": "eligibility_json"
+            },
+            {
+              "name": "warnings_json"
+            },
+            {
+              "name": "sources_json"
+            },
+            {
+              "name": "last_reminder_key"
+            },
+            {
+              "name": "created_at"
+            },
+            {
+              "name": "updated_at"
+            }
+          ]
+        },
+        "options": {
+          "createIfNotExists": true
+        }
+      },
+      "id": "413ce74c-0970-406f-aecc-e817d0352afc",
+      "name": "Create OTA Data Table",
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1,
+      "position": [
+        -2416,
+        -1264
+      ]
+    }
+  ],
+  "connections": {
+    "Setup Storage - run once": {
+      "main": [
+        [
+          {
+            "node": "Create OTA Data Table",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}

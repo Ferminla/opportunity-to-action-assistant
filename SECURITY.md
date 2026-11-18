@@ -1,0 +1,8 @@
+# Security and privacy
+
+- This is an experimental private single-user bot. Keep the n8n editor authenticated, restrict access to your host and use HTTPS for the Telegram webhook. Do not expose the bot to untrusted users by removing the owner check.
+- Never paste API keys, tokens, private application materials, personal documents or login URLs into the bot. Use public opportunity pages only. Public URL retrieval sends the URL to Jina Reader; selected source text (or your pasted text) goes to OpenAI for extraction. Telegram receives extracted results. Data Tables and n8n execution logs may store content, IDs and state. `store: false` is sent to the Responses API but is not a blanket promise of zero retention across services.
+- Configure execution retention/pruning according to your needs and protect your persistent volume, backups and n8n encryption key. Review provider terms and access controls for your deployment.
+- Keep credentials in n8n's credential manager. The public JSON intentionally has no credential bindings, private owner ID, table ID, webhook IDs, execution logs or saved opportunities. Do not commit `workflow.local.json`, personal exports or screenshots containing identifiers/secrets.
+- Source text can be adversarial. Prompt isolation, structured output and evidence checks reduce but do not eliminate risk. The model cannot submit applications or execute arbitrary tools in this workflow. Review evidence and official terms yourself.
+- For a suspected vulnerability, avoid publishing working exploits or secrets. Use the repository maintainer's private reporting channel if available.
